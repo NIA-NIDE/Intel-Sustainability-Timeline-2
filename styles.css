@@ -1,0 +1,163 @@
+/* Brand Colors #0071C5 #15B8FC */ 
+
+* { box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+} 
+
+
+
+body { background-color: white; 
+    font-family: sans-serif;
+     margin: 0; 
+     padding: 0; 
+    } 
+
+.Top{ background-color: #0071C5; 
+    width: 100%; 
+    text-align: center; 
+    padding: 0; 
+    padding-bottom: 30px; 
+} 
+
+#Logo { 
+    max-width: 100px; 
+    padding-top: 20px; 
+    padding-bottom: 20px;
+} 
+    
+    #Title{ font-size: 48px; 
+        color: white; 
+    } 
+
+#underline { width: 300px; 
+    height: 2px; 
+    background-color: white; 
+    border: none; 
+    margin: 10px auto; 
+} 
+
+#info-card{ max-width: 900px; /* controls how wide the paragraph can get */ 
+    width: 100%; 
+    margin: 0 auto; /* centers it */ 
+    padding: 0 5vw; /* responsive padding for small screens */ 
+    color: white; 
+    font-weight: bold; 
+    line-height: 1.5; 
+    box-sizing: border-box; 
+    text-align: center; /* optional: makes it match the header */ 
+} 
+
+/* Done Styling the Header */ 
+.overlay{ 
+    position: absolute;
+
+     width: 100%;
+     height: 100%;
+
+     top: 0;
+     left:0;
+
+     display: flex;
+     justify-content: center; 
+     text-align: center; 
+     align-items: center; 
+
+     background-color: hsla(0, 0%, 100%, 0.7);
+
+     opacity: 0;
+     transition: opacity 0.3s ease; 
+
+}
+
+
+.overlay p {
+    font-size: 12px;
+    font-weight: bolder;
+    color: black;
+}
+
+.Timeline:hover .overlay{ 
+ opacity: 1; 
+ }
+    
+/* The container for the whole*/
+
+
+.container {
+
+     width: 100%;
+     display: flex; 
+    
+     flex-wrap: nowrap; 
+     gap: 20px; 
+     overflow-x: auto; 
+     max-width: calc((220px * 4) + (20px * 3)); /* shows exactly 4 cards */ 
+     margin: 40px auto; /* centers the row on the page */ 
+     padding: 10px; 
+} 
+
+.Timeline { 
+    position: relative; 
+    width: 220px; /* each card width */ 
+    flex: 0 0 220px; /* prevents shrinking */ 
+    border: 1px dashed grey; 
+    border-radius: 5%; 
+    text-align: center; 
+    background-color: #0071C5; 
+    padding: 10px; 
+
+    
+   overflow: hidden; /* keeps overlay inside the card */
+} 
+
+
+
+.container p {
+     margin-top: 20px; 
+    font-family:Verdana, Geneva, Tahoma, sans-serif; 
+    font-size: 12px; 
+} 
+
+.Timeline img { 
+    width: 100%;
+     display: block; 
+    } 
+
+footer {
+     background-color: #0071C5; 
+     height: 100px; 
+    }
+
+#direction{ 
+    text-align: center; 
+    font-style: italic;
+ } 
+
+footer p { 
+    text-align: center; 
+    padding-top: 50px; 
+    font-weight: bolder; 
+} 
+
+a { 
+    color: black; 
+} 
+
+a:hover { color: white; }
+
+/* Making it device friendly*/
+
+@media (max-width: 800px){ 
+.container {
+    flex-wrap: wrap;          /* allow cards to go to next line */
+    overflow-x: hidden;       /* stop sideways scrolling */
+    max-width: 100%;          /* full width on small screens */
+    justify-content: center;  /* center the cards */
+  }
+
+  .Timeline {
+    width: 90%;               /* make cards fit nicely on mobile */
+    flex: 0 0 90%;
+  }
+}
